@@ -68,7 +68,11 @@ html {
     box-sizing: inherit;
 }
 
-body {
+body,
+button,
+input,
+select,
+textarea {
     font-family: "WeblySleek UI", sans-serif;
 }
 
