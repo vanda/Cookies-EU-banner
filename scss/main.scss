@@ -1,2 +1,11 @@
+$main-color: #f39c12;
+$header: #3d3d3f;
+$header-dark: #222;
+
+
+
 @import "normalize";
+@import "font";
 @import "base";
+@import "header";
+@import "section";

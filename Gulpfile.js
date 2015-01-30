@@ -27,7 +27,7 @@ gulp.task("styles", function(){
 
 
 gulp.task('watch', function(){
-    gulp.watch(mainStyle, ['styles']);
+    gulp.watch(['scss/*.scss'], ['styles']);
 
     gulp.watch(['css/**', 'img/*', 'js/*'], function(file){
         $.livereload.changed(file);

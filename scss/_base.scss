@@ -13,6 +13,11 @@ html {
     line-height: 1.4;
 }
 
+html,
+body {
+    background: #efefef;
+}
+
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -48,6 +53,45 @@ fieldset {
 textarea {
     resize: vertical;
 }
+
+
+
+
+
+
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "WeblySleek UI", sans-serif;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
 
 
 /* ==========================================================================
