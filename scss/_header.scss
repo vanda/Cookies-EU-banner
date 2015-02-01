@@ -7,6 +7,7 @@
 
 .cross-projects-open-button {
 	display: block;
+	position: relative;
 	float: left;
 	border: 0;
 	margin: 0;
@@ -20,10 +21,35 @@
 	font-weight: 100;
 	transition: all 0.15s;
 }
+.cross-projects-open-button::before,
+.cross-projects-open-button::after {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 21px;
+	right: 30px;
+	width: 12px;
+	height: 1px;
+	background: #FFF;
+	transition: all 0.15s;
+}
+.cross-projects-open-button::before {
+	transform: rotate(-35deg);
+}
+.cross-projects-open-button::after {
+	transform: rotate(35deg);
+	right: 40px;
+}
 .cross-projects-open-button:hover,
 .cross-projects-open-button:focus {
 	background: #FFF;
 	color: $header-dark;
+}
+.cross-projects-open-button:hover::before,
+.cross-projects-open-button:focus::before,
+.cross-projects-open-button:hover::after,
+.cross-projects-open-button:focus::after {
+	background: $header-dark;
 }
 .cross-projects-made-by {
 	display: block;
@@ -46,17 +72,17 @@
 
 .cross-projects-list {
 	display: none;
-}
-.cross-projects-open .cross-projects-list {
-	display: block;
 	height: 100px;
 	background: $header-cross;
 }
 .cross-projects-item {
+	display: block;
+	float: left;
 	width: 33.33%;
 	height: 100px;
 	color: #FFF;
 	text-align: center;
+	transition: all 0.15s;
 }
 .cross-projects-item-logo {
 	display: block;
@@ -68,23 +94,98 @@
 }
 .cross-projects-item-infos {
 	float: left;
+	position: relative;
+	display: block;
+	overflow: hidden;
 	width: calc(100% - 100px);
 	height: 100px;
 	padding-top: 4px;
 }
+.cross-projects-item-infos::before,
+.cross-projects-item-infos::after {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 42px;
+	width: 0%;
+	height: 3px;
+}
+.cross-projects-item-infos::before {
+	left: 50%;
+	transition: width ease-in 0.2s, left 0.15s ease 0.15s;
+}
+.cross-projects-item-infos::after {
+	right: 50%;
+	transition: width ease-in 0.2s, right 0.15s ease 0.15s;
+}
+a.cross-projects-item:hover .cross-projects-item-infos::before,
+a.cross-projects-item:focus .cross-projects-item-infos::before,
+a.cross-projects-item:hover .cross-projects-item-infos::after,
+a.cross-projects-item:focus .cross-projects-item-infos::after {
+	width: 100%;
+}
+a.cross-projects-item:hover .cross-projects-item-infos::before,
+a.cross-projects-item:focus .cross-projects-item-infos::before {
+	left: -100%;
+}
+a.cross-projects-item:hover .cross-projects-item-infos::after,
+a.cross-projects-item:focus .cross-projects-item-infos::after {
+	right: -100%;
+}
 .cross-projects-item-name {
+	display: block;
+	position: absolute;
 	font-size: 30px;
 	font-weight: 100;
+	z-index: 1;
+	width: 100%;
 }
 .cross-projects-item-description {
-	margin: 0;
+	display: block;
+	margin: 42px 0 0;
 	font-weight: 100;
 	font-size: 18px;
 	line-height: 22px;
+	transition: all 0.15s;
+}
+a.cross-projects-item:hover .cross-projects-item-name,
+a.cross-projects-item:focus .cross-projects-item-name {
+	text-shadow: #111 2px 2px 0;
 }
 
 .cross-projects-item-trumbowyg {
 	background: $trumbowyg-main-color;
+}
+.cross-projects-item-infos::before,
+.cross-projects-item-infos::after {
+	background: rgba($trumbowyg-main-color, 0.3);
+}
+a.cross-projects-item-trumbowyg:hover .cross-projects-item-description,
+a.cross-projects-item-trumbowyg:focus .cross-projects-item-description {
+	color: lighten($trumbowyg-main-color, 5%);
+}
+a.cross-projects-item-trumbowyg:hover,
+a.cross-projects-item-trumbowyg:focus {
+	background: $header-dark;
+}
+
+.cross-projects-item-moda11yze {
+	background: $moda11yze-main-color;
+}
+a.cross-projects-item-moda11yze:hover,
+a.cross-projects-item-moda11yze:focus {
+	background: desaturate(darken($moda11yze-main-color, 11%), 5%);
+}
+.cross-projects-item-moda11yze .cross-projects-item-logo,
+.cross-projects-item-moda11yze .cross-projects-item-infos {
+	opacity: 0.5;
+}
+
+.cross-projects-item-more {
+	font-size: 24px;
+	font-weight: 100;
+	opacity: 0.25;
+	line-height: 95px;
 }
 
 
