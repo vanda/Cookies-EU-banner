@@ -11,6 +11,7 @@
 }
 .introduction-section-col-content {
 	position: relative;
+	min-height: 500px;
 }
 .introduction-section-col-illu {
 	display: block;
@@ -37,7 +38,7 @@
 	display: block;
 	position: absolute;
 	top: -150px;
-	height: 175%;
+	height: 165%;
 	width: 100%;
 	background: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .04) 10%, rgba(0, 0, 0, .04) 90%, rgba(0, 0, 0, 0));
 }
