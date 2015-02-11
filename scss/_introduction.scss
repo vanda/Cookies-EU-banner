@@ -1,3 +1,15 @@
+.section-introduction {
+	margin-top: 50px;
+
+	&,
+	& + .section {
+		.section-title {
+			padding-top: 0;
+			border: none;
+		}
+	}
+}
+
 .introduction-section {
 	height: 460px;
 	background: $main-color;

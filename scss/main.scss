@@ -6,6 +6,8 @@ $header-cross: #313132;
 $trumbowyg-main-color: #3498db;
 $moda11yze-main-color: #2ecc71;
 
+$font: "WeblySleek UI", sans-serif;
+
 
 
 @import "normalize";
@@ -14,6 +16,8 @@ $moda11yze-main-color: #2ecc71;
 @import "header";
 @import "section";
 @import "introduction";
+@import "donate-form";
+@import "footer";
 
 @import "highlightjs-github";
 @import "documentation";

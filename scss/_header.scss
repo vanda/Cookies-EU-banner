@@ -236,51 +236,11 @@ a.cross-projects-item-moda11yze:focus {
 	padding: 30px 0 0;
 	font-size: 18px;
 }
-.header-install-download {
-	display: block;
-	position: relative;
-	background: $main-color;
-	width: 300px;
-	height: 80px;
-	line-height: 80px;
-	margin: 0 auto;
-	font-weight: 100;
-	font-size: 30px;
-	text-decoration: none;
-	color: #FFF;
-	transition: all 0.15s;
-}
-.header-install-download::before,
-.header-install-download::after {
-	content: " ";
-	display: block;
-	position: absolute;
-	width: 0%;
-	height: 1px;
-	background: $main-color;
-	opacity: 0.7;
-	transition: none;
-}
-.header-install-download::before {
-	top: 0;
-	left: 0;
-}
-.header-install-download::after {
-	right: 0;
-	bottom: 0;
-}
-.header-install-download:hover::before,
-.header-install-download:focus::before,
-.header-install-download:hover::after,
-.header-install-download:focus::after {
-	width: 100%;
-	opacity: 0;
-	transition: width 0.15s ease 0.15s, opacity 0.5s ease 0.2s;
-}
-.header-install-download:hover,
-.header-install-download:focus {
-	background: $header-dark;
-	color: $main-color;
+.big-button.header-install-download {
+    width: 300px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
 }
 .header-install-or {
 	display: block;

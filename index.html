@@ -59,7 +59,7 @@
                         <h1 class="header-name-title">Cookies <br> EU banner</h1>
                     </div>
                     <div class="header-install">
-                        <a href="" class="header-install-download">
+                        <a href="" class="header-install-download big-button">
                             Download v1.0.1
                         </a>
                         <span class="header-install-or">or</span>
@@ -71,8 +71,12 @@
             <div class="header-bottom">
                 <div class="wrapper">
                     <nav class="header-navigation" role="navigation">
-                        <a href="" class="header-navigation-link"><span class="header-navigation-ico">&lt;/&gt;</span> Source code</a>
-                        <a href="" class="header-navigation-link"><span class="header-navigation-ico">//</span> Documentation</a>
+                        <a href="https://github.com/Alex-D/cookies-eu-banner" class="header-navigation-link">
+                            <span class="header-navigation-ico">&lt;/&gt;</span> Source code
+                        </a>
+                        <a href="#documentation" class="header-navigation-link">
+                            <span class="header-navigation-ico">//</span> Documentation
+                        </a>
                     </nav>
                     <div class="header-description">
                         Cookies EU banner is a JavaScript class which manage display of banner <br>
@@ -85,7 +89,7 @@
 
 
         <main class="main">
-            <section class="section">
+            <section class="section section-introduction">
                 <div class="wrapper">
                     <h2 class="section-title">Introducing Cookies EU banner</h2>
                     <h3 class="section-subtitle">Why you should love it?</h3>
@@ -130,20 +134,120 @@
             </section>
 
 
-            <section class="section wrapper">
+            <section class="section wrapper" id="documentation">
                 <h2 class="section-title">Getting started</h2>
                 <h3 class="section-subtitle">How to use?</h3>
 
+                <p>
+                    At the top of your page, add your banner following these IDs: 
+                </p>
                 <pre><code class="html">
-&lt;script src="bower_components/cookies-eu-banner/cookies-eu-banner.min.js">&lt;/script>
+&lt;body>
+    &lt;div id="cookies-eu-banner" style="display: none;">
+        By continuing your visit to this site, you accept the use of cookies by Google Analytics to make visits statistics.
+        &lt;a href="./en-savoir-plus.html" id="cookies-eu-more">Read more&lt;/a>
+        &lt;button id="cookies-eu-reject">Reject&lt;/button>
+        &lt;button id="cookies-eu-accept">Accept&lt;/button>
+    &lt;/div>
+    &lt;!-- Your code... -->
                 </code></pre>
+                <p>
+                    Copy the minified JavaScript file called <code>cookies-eu-banner.min.js</code> into your project folder via Bower, npm or direct download (not recommended). Add this line at the bottom of your body (adapt it if you don't use bower).
+                </p>
+                <pre><code class="html">
+    &lt;!-- Your code... -->
+    &lt;script src="bower_components/cookies-eu-banner/cookies-eu-banner.min.js">&lt;/script>
+    &lt;!-- Use Cookies EU banner class here, see below -->
+&lt;/body>
+                </code></pre>
+                <p>
+                    If you want use it for Google Analytics for example, you just need to put this code after the cookies-eu-banner imported just over it, and add <code>new&nbsp;CookieEuBanner()</code> arround:
+                </p>
+                <pre><code class="html">
+&lt;script>
+    new CookiesEuBanner(function(){
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
+    });
+&lt;/script>
+                </code></pre>
+                <p>
+                    You can put this code in your <code>main.js</code> file, but you need to load <code>cookies-eu-banner.min.js</code> before.
+                </p>
+            </section>
+
+
+            <section class="section wrapper">
+                <h2 class="section-title">Buy me a beer</h2>
+                <h3 class="section-subtitle">Support the project!</h3>
+
+                <p>
+                    Making a donation will motivate me to keep this project, and others projects you can see in header, going and allow for further development.
+                </p>
+
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <div class="donate-form">
+                        <span class="via-paypal">Via PayPal</span>
+
+                        <input type="number" name="amount" id="amount" value="5.00" step="any" min="0" autocomplete="off" required>
+                        <label for="amount">Amount</label>
+                        <select name="currency_code">
+                            <option value="EUR">€</option>
+                            <option value="USD">$</option>
+                        </select>
+                        <button type="submit" name="submit" class="big-button">Support the project</button>
+                        <span class="big-button-effects"></span>
+                    </div>
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="demodealex@gmail.com">
+                    <input type="hidden" name="item_name" value="Cookies EU banner">
+                    <input type="hidden" name="item_number" value="COOKIESEUBANNER-DONATE">
+                    <input type="hidden" name="no_shipping" value="1">
+                    <input type="hidden" name="no_note" value="1">
+                    <input type="hidden" name="tax" value="0">
+                    <input type="hidden" name="bn" value="PP-DonationsBF">
+                    <input type="hidden" name="lc" value="US">
+                </form>
             </section>
         </main>
 
 
 
         <footer class="footer">
-            
+            <div class="wrapper">
+                <span class="footer-text">
+                    Made with &hearts; by Alex-D
+                </span>
+            </div>
+            <div class="wrapper">
+                <a class="footer-link" href="http://alex-d.fr/" title="Discover the author's website">
+                    Website
+                </a>
+                &bull;
+                <a class="footer-link" href="https://github.com/Alex-D" title="Alex-D's Github profile">
+                    Github
+                </a>
+                &bull;
+                <a class="footer-link" href="https://twitter.com/AlexandreDemode" title="Alex-D's Twitter">
+                    Twitter
+                </a>
+                &bull;
+                <a class="footer-link" href="https://www.facebook.com/Alex.D.fr" title="Alex-D's Facebook page">
+                    Facebook
+                </a>
+                &bull;
+                <a class="footer-link" href="https://plus.google.com/+AlexandreDEMODEAlexD" title="Alex-D's Google+ page">
+                    Google+
+                </a>
+                &bull;
+                <a class="footer-link" href="https://soundcloud.com/alexandre-demode" title="Listen Alex-D's compositions on SoundCloud">
+                    SoundCloud
+                </a>
+            </div>
         </footer>
 
 
