@@ -59,8 +59,8 @@
                         <h1 class="header-name-title">Cookies <br> EU banner</h1>
                     </div>
                     <div class="header-install">
-                        <a href="" class="header-install-download big-button">
-                            Download v1.0.1
+                        <a href="https://github.com/Alex-D/Cookies-EU-banner/archive/1.2.0.zip" class="header-install-download big-button">
+                            Download v1.2.0
                         </a>
                         <span class="header-install-or">or</span>
                         <code class="header-install-command">bower install cookies-eu-banner</code>
@@ -161,7 +161,17 @@
 &lt;/body>
                 </code></pre>
                 <p>
-                    If you want use it for Google Analytics for example, you just need to put this code after the cookies-eu-banner imported just over it, and add <code>new&nbsp;CookieEuBanner()</code> arround:
+                    If you want use it, you just need to put this code after the cookies-eu-banner imported just over it, and add <code>new&nbsp;CookieEuBanner()</code> arround your code:
+                </p>
+                <pre><code class="html">
+&lt;script>
+    new CookiesEuBanner(function(){
+        // Your code here
+    });
+&lt;/script>
+                </code></pre>
+                <p>
+                    For example, with Google Analytics:
                 </p>
                 <pre><code class="html">
 &lt;script>
@@ -178,6 +188,18 @@
                 <p>
                     You can put this code in your <code>main.js</code> file, but you need to load <code>cookies-eu-banner.min.js</code> before.
                 </p>
+
+                <h4 class="section-part-title">Option: waitAccept</h4>
+                <p>
+                    You want wait until the user has accepted cookies? You just need to pass a second parameter to the constructor. Default value is <code>false</code>.
+                </p>
+                <pre><code class="html">
+&lt;script>
+    new CookiesEuBanner(function(){
+        // Your code here
+    }, <span class="highlight">true</span>);
+&lt;/script>
+                </code></pre>
             </section>
 
 
@@ -185,7 +207,7 @@
                 <h2 class="section-title">Buy me a beer</h2>
                 <h3 class="section-subtitle">Support the project!</h3>
 
-                <p>
+                <p class="text-center">
                     Making a donation will motivate me to keep this project, and others projects you can see in header, going and allow for further development.
                 </p>
 
