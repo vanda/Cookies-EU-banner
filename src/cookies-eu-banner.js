@@ -62,7 +62,7 @@
         rejectButton = document.getElementById('cookies-eu-reject'),
         acceptButton = document.getElementById('cookies-eu-accept'),
         moreLink = document.getElementById('cookies-eu-more'),
-        delayRemove = (banner.dataset.delayRemove === undefined) ? 0 : parseInt(banner.dataset.delayRemove); 
+        waitRemove = (banner.dataset.waitRemove === undefined) ? 0 : parseInt(banner.dataset.waitRemove); 
 
       banner.style.display = 'block';
 
@@ -74,7 +74,7 @@
 
       if (acceptButton) {
         this.addEventListener(acceptButton, 'click', function () {
-          _this.removeBanner(banner, delayRemove);
+          _this.removeBanner(banner, waitRemove);
           _this.setCookie(_this.cookieName, true);
           _this.launchFunction();
         });
@@ -82,7 +82,7 @@
 
       if (rejectButton) {
         this.addEventListener(rejectButton, 'click', function () {
-          _this.removeBanner(banner, delayRemove);
+          _this.removeBanner(banner, waitRemove);
           _this.setCookie(_this.cookieName, false);
           _this.deleteTrackingCookies();
         });
@@ -163,10 +163,10 @@
      * Delays removal of banner allowing developers
      * to specify their own transition effects
      */
-    removeBanner: function (banner, delay) {
+    removeBanner: function (banner, wait) {
       setTimeout (function() {
         banner.parentNode.removeChild(banner);
-      }, delay);
+      }, wait);
     }
   };
 
